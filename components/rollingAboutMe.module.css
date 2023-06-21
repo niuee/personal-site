@@ -1,0 +1,15 @@
+.rollingAboutMe {
+    animation: rollAnimation 5s linear infinite;
+}
+
+@keyframes rollAnimation {
+    from {
+        transform: translateY(150%) rotateX(-90deg);
+    }
+    50% {
+        transform: translateY(0%) rotateX(0deg);
+    }
+    to {
+        transform: translateY(-150%) rotateX(90deg);
+    }
+}

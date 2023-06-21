@@ -1,0 +1,60 @@
+
+.grid-footer{
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.grid-item {
+    color: #f5f5dc;
+    /* border: solid; */
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 1440px){
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 1vw;
+        grid-row-gap: 1vh;
+        justify-content: center;
+    }
+    .grid-header{
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 1vw;
+        grid-row-gap: 1vh;
+        justify-content: center;
+    }
+    .grid-header{
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+}
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+    .grid-container{
+        grid-auto-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        column-gap: 3vw;
+        row-gap: 3vh;
+    }
+    .grid-item {
+        border: solid black;
+    }
+    .grid-header{
+        grid-column: 1/-1;
+        grid-row: span 1;
+    }
+}
+

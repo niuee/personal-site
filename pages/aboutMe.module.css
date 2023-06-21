@@ -1,0 +1,121 @@
+.aboutme-highlight {
+    animation: 3s highlight-text;
+}
+
+@keyframes highlight-text{
+    from {
+        width: 0;
+    }
+    to {
+        width: 106%;
+    }
+}
+
+.test-class {
+    color: aqua;
+}
+
+.aboutme-content{
+    text-indent: 3rem;
+    font-weight: 300;
+    line-height: 2;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1440px) {
+
+    .aboutme-name {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .aboutme-content {
+        grid-column-start: 2;
+        grid-column-end: 7;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .aboutme-projects {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 8;
+        grid-column-end: span 4; 
+    }
+
+    .resume-icon {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 2;
+        grid-column-end: span 1; 
+        justify-self: center;
+        align-self: center;
+    }
+
+    .github-icon {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 5;
+        grid-column-end: span 1; 
+        justify-self: center;
+        align-self: center;
+    }
+
+    .linkedin-icon {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 8;
+        grid-column-end: span 1; 
+        justify-self: center;
+        align-self: center;
+    }
+
+    .medium-icon {
+        grid-row-start: 3;
+        grid-row-end: 5;
+        grid-column-start: 11;
+        grid-column-end: span 1; 
+        justify-self: center;
+        align-self: center;
+
+    }
+}
+
+@media screen and (min-width: 1441px) {
+
+    .aboutme-name {
+        grid-column-start: 2;
+        grid-column-end: 6;
+    }
+
+    .aboutme-content {
+        grid-column-start: 2;
+        grid-column-end: 7;
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .aboutme-projects {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 9;
+        grid-column-end: span 4; 
+        border: solid beige;
+    }
+}
+  
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+
+    .aboutme-content {
+        grid-row: span 5;
+    }
+
+    .aboutme-name{
+        font-size: 3rem;
+        grid-column: 1/-1;
+        grid-row: span 2;
+    }
+}
+

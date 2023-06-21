@@ -22,7 +22,7 @@ export default function Home( {allPostsData} : HomeProps)
                 <link rel="icon" href="/favicon.ico" />
                 <meta
                 name="description"
-                content="Learn how to build a personal website using Next.js"
+                content="just a simple personal website built with Next.js"
                 />
             </Head>
             <div id={styles.info}>

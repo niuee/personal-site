@@ -2,20 +2,28 @@ import { useEffect, useRef } from "react";
 import styles from "./typeWriterAboutMe.module.css";
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
-// import javascript from 'highlight.js/lib/languages/javascript';
-// import go from 'highlight.js/lib/languages/go'
-// hljs.registerLanguage('javascript', javascript);
-// hljs.registerLanguage('go', go);
+
+type typeWriterProps = {
+    typeOutStringArray?: singleString[];
+}
 
 
-export default function TypeWriterAboutMe(props){
+type singleString = {
+    language: string;
+    str: string;
+}
+
+export default function TypeWriterAboutMe(props: typeWriterProps){
     let typeOutString = [
                         {language: "python", str:"print(about_me)"}, 
                         {language: "javascript", str: "console.log(aboutMe);"},
-                        { language: "go", str: "fmt.Println(aboutMe)"}, 
+                        {language: "go", str: "fmt.Println(aboutMe)"}, 
                         {language: "cpp", str: "std::cout<<aboutMe<<std::endl;"}, 
                     ];
 
+    if (props.typeOutStringArray != null) {
+        typeOutString = props.typeOutStringArray;
+    }
 
     let typeWriter = useRef<TypeWriter>(new TypeWriter(typeOutString));
 
@@ -52,8 +60,9 @@ class TypeWriter {
     private currentFullString: string;
     private isDeletingString: boolean;
     private timeOut: NodeJS.Timeout;
+    private loop: boolean = true;
 
-    constructor(rotatingStrings: {language: string, str: string}[]){
+    constructor(rotatingStrings: {language: string, str: string}[], loop=true){
         if (rotatingStrings.length <= 0) {
             this.rotatingStrings = [{language: "none", str:"test string"}]
         } else {
@@ -62,6 +71,7 @@ class TypeWriter {
         this.currentStringIndex = 0;
         this.currentFullString = this.rotatingStrings[this.currentStringIndex].str;
         this.currentRenderedString = "";
+        this.loop = loop;
     }
 
     step():void{
@@ -84,8 +94,11 @@ class TypeWriter {
         if (outterAnchor) {
             let wrap = outterAnchor.querySelector(".test");
             if (wrap != null) {
-                wrap.innerHTML = hljs.highlight(this.currentRenderedString, {language: this.rotatingStrings[this.currentStringIndex].language}).value;
-                
+                if (this.rotatingStrings[this.currentStringIndex].language !== "none") {
+                    wrap.innerHTML = hljs.highlight(this.currentRenderedString, {language: this.rotatingStrings[this.currentStringIndex].language}).value;
+                } else {
+                    wrap.innerHTML = this.currentRenderedString;
+                }
             }
         }
 
@@ -112,7 +125,9 @@ class TypeWriter {
     }
 
     stepString(){
-        this.currentStringIndex = (this.currentStringIndex + 1) % this.rotatingStrings.length;
-        this.currentFullString = this.rotatingStrings[this.currentStringIndex].str;
+        if (this.loop){
+            this.currentStringIndex = (this.currentStringIndex + 1) % this.rotatingStrings.length;
+            this.currentFullString = this.rotatingStrings[this.currentStringIndex].str;
+        }
     }
 }

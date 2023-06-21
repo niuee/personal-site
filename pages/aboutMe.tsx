@@ -9,6 +9,13 @@ export default function AboutMe(props){
 
     return (
         <div style={{height: "100vh", width: "100vw", background: "#3a3a3a"}}>
+            <Head>
+                <meta
+                name="description"
+                content="just a simple personal website built with Next.js"
+                />
+                <title>vntchang|About Me/關於我</title>
+            </Head>
             <GridContainer numOfCols={12} style={{height: "100%", width: "100%", padding:"3vw"}}>
                 <GridItem className={styles['aboutme-name']} style={{fontFamily: "Noto Sans TC", fontWeight: "lighter", textAlign: "center", alignSelf: "center", justifySelf: "center", fontSize: "5rem"}}>
                     <div style={{position: "relative"}}>

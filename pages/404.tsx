@@ -13,6 +13,7 @@ export default function Custom404() {
                 <meta
                 name="description"
                 />
+                <title>404 Not Found/找不到</title>
             </Head>
             <div id={styles.info}>
                 <h1 style={{fontWeight: "lighter"}}>404</h1>

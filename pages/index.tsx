@@ -19,7 +19,6 @@ export default function Home( {allPostsData} : HomeProps)
     return (
         <div id="container" style={{width: "100vw", height: "100vh", background: "#3a3a3a"}}>
             <Head>
-                <link rel="icon" href="/favicon.ico" />
                 <meta
                 name="description"
                 content="just a simple personal website built with Next.js"

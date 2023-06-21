@@ -52,7 +52,7 @@ export default function AboutMe(props){
                             <a href="https://github.com/niuee/hrcrawler" target="_blank"><u>HR Crawler</u></a>: A simple crawler that scrapes real world race horses data from a Japanese website netkeiba.com
                         </p>
                         <p style={{gridColumn: "1/-1", justifySelf:"left"}}>
-                            <a href="https://github.com/niuee/hrracetrack-maker" target="_blank"><u>HR Racetrack Maker</u></a>: An editor used to create race tracks that can be used in the physics engine. <a href="https://vntchang.dev/racetrack-maker" target="_blank"><u>Live Demo</u></a>
+                            <a href="https://github.com/niuee/hrracetrack-maker" target="_blank"><u>HR Racetrack Maker</u></a>: An editor used to create race tracks that can be used in the physics engine. <a href="https://vntchang.dev/racetrack-maker/" target="_blank"><u>Live Demo</u></a>
                         </p>
                     </GridContainer>
                 </GridItem>

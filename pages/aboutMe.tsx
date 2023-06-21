@@ -8,7 +8,7 @@ export default function AboutMe(props){
 
     
     useEffect(()=>{
-        document.title = "vntchang|About Me/關於我";
+        document.title = "vntchang | About Me / 關於我";
     }, []);
 
     return (

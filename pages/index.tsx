@@ -23,7 +23,7 @@ export default function Home( {allPostsData} : HomeProps)
                 name="description"
                 content="just a simple personal website built with Next.js"
                 />
-                <title>vntchang|Personal Website/個人網頁</title>
+                <title>vntchang | Personal Website / 個人網頁</title>
             </Head>
             <div id={styles.info}>
                 <TypeWriterAboutMe></TypeWriterAboutMe>

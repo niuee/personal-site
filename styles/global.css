@@ -38,9 +38,15 @@ button {
   font-weight: bold;
 }
 
-@media screen and (min-width: 1441px) {
+@media screen and (min-width: 1920px) {
   html{
     font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px){
+  html{
+    font-size: 18px;
   }
 }
 
